@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'Jenkins-ECS-my-jnlp-slave'
+        label 'my-jnlp-slave'
     }
     stages {
         stage('Build') {
