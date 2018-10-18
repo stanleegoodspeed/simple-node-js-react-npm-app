@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'ecs-java'
+        label 'my-tmp-slave'
     }
     stages {
         stage('Build') {
