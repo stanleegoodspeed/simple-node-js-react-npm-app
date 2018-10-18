@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'my-jnlp-slave'
+        label 'ecs-java'
     }
     stages {
         stage('Build') {
