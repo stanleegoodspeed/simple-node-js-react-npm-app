@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'docker/compose:latest'
+            image 'docker/compose:1.22.0'
         }
     }
     environment {
