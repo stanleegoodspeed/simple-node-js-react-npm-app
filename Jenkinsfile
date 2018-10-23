@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'docker run -p 4000:80 friendlyhello'
+				sh 'docker run -p 4000:80 hello-world'
             }
         }
         stage('Test') {
