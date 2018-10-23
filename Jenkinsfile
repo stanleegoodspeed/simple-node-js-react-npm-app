@@ -10,8 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'docker pull docker/compose:1.22.0'
-                sh 'docker-compose up -d'
+				sh 'docker pull docker/compose:1.22.0 && docker-compose --version && docker-compose up -d'
             }
         }
         stage('Test') {
