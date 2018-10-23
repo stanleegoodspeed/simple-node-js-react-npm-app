@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'docker/compose:1.22.0'
+            image 'docker:latest'
         }
     }
     environment {
@@ -10,8 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'docker-compose --version'
-				sh 'docker-compose up -d'
+				sh 'docker run -p 4000:80 hello-world'
             }
         }
         stage('Test') {
