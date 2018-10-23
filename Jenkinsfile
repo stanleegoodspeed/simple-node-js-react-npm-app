@@ -11,8 +11,7 @@ pipeline {
         stage('Build') {
             steps {
 				sh 'docker pull docker/compose:1.22.0'
-				sh 'docker --version'
-				sh 'curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose'
+				sh 'pip3 install docker-compose'
             }
         }
         stage('Test') {
