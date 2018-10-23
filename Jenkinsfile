@@ -10,8 +10,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'docker run -p 4000:80 hello-world'
-				sh 'docker exec -ti hello-world /bin/bash "echo COLIN"'
+				sh 'docker run -p 4000:80 hello-world && docker container ls'
+				sh 'docker container ls'
+				//sh 'docker exec -ti hello-world /bin/bash "echo COLIN"'
             }
         }
         stage('Test') {
