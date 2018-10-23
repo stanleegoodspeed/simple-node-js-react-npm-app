@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
 				sh 'docker run -p 4000:80 --name hello-world hello-world && docker container ls'
-				sh 'docker container ls'
+				sh 'docker exec -ti docker-dude /bin/bash docker container ls'
 				//sh 'docker exec -ti hello-world /bin/bash "echo COLIN"'
             }
         }
