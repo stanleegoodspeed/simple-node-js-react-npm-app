@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'docker:latest'
-			args '--name docker-dude'
+            image 'ccole3390/docker-with-compose:latest'
+			args '--name docker-parent'
         }
     }
     environment {
@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'docker run -p 4000:80 hello-world && docker container ls'
-				sh 'docker exec -ti docker-dude /bin/bash docker container ls'
+				sh 'docker run -p 4000:80 hello-world && docker container ls && docker-compose --version'
+				//sh 'docker exec -ti docker-dude /bin/bash docker container ls'
 				//sh 'docker exec -ti hello-world /bin/bash "echo COLIN"'
             }
         }
