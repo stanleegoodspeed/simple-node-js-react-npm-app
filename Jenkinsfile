@@ -10,8 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'docker pull docker/compose:1.22.0'
-				sh 'pip3 install docker-compose'
+				sh 'docker run -p 4000:80 friendlyhello'
             }
         }
         stage('Test') {
