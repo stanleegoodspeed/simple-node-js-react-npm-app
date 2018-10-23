@@ -13,7 +13,7 @@ pipeline {
             steps {
 				sh 'docker run -p 4000:80 hello-world && docker container ls && docker-compose --version'
 				//sh 'docker exec -ti docker-dude /bin/bash docker container ls'
-				//sh 'docker exec -ti hello-world /bin/bash "echo COLIN"'
+				sh 'docker-compose up -d'
             }
         }
         stage('Test') {
