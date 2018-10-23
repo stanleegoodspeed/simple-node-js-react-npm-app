@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'docker:latest'
+			args '--name docker-dude'
         }
     }
     environment {
@@ -10,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'docker run -p 4000:80 hello-world && docker container ls'
+				sh 'docker run -p 4000:80 --name hello-world hello-world && docker container ls'
 				sh 'docker container ls'
 				//sh 'docker exec -ti hello-world /bin/bash "echo COLIN"'
             }
