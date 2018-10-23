@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
 				sh 'docker pull docker/compose:1.22.0'
-                sh 'npm install'
+                sh 'docker-compose up -d'
             }
         }
         stage('Test') {
