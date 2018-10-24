@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'systemctl status docker'
+				sh 'dockerd'
+				sh 'service docker status'
 				sh 'docker run -p 4000:80 hello-world && docker container ls && docker-compose --version'
 				sh 'docker-compose up -d'
 				sh 'chmod +x ./test-script.sh'
