@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'ccole3390/docker-with-compose:latest'
+            image 'ccole3390/compose-slave:latest'
 			args '--name docker-parent'
         }
     }
